@@ -8,10 +8,8 @@ import time
 import math
 from player.parser import *
 from r2a.ir2a import IR2A
-import base.whiteboard as whiteboard
 
-
-class ANDRE(IR2A):
+class implementado(IR2A):
 
     def __init__(self, id):
         IR2A.__init__(self, id)
@@ -23,7 +21,6 @@ class ANDRE(IR2A):
         self.limite_taxa_bits = []
         self.delta = 0.1
         self.mu = 0.05
-        self.whiteboard = whiteboard.Whiteboard.get_instance()
 
     def handle_xml_request(self, msg):
         self.send_down(msg)
@@ -49,12 +46,6 @@ class ANDRE(IR2A):
 
     def handle_segment_size_request(self, msg):
         # time to define the segment quality choose to make the request
-
-        buffer_atual = self.whiteboard.get_amount_video_to_play()
-        buffer_maximo = self.whiteboard.get_max_buffer_size()
-        qualidades_anteriores = self.whiteboard.get_playback_qi()
-        pausas = self.whiteboard.get_playback_pauses()
-        tempo_segmento_buffer = self.whiteboard.get_playback_segment_size_time_at_buffer()
 
         numero_segmento = msg.segment_id - 1
         
