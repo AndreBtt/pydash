@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@author: André
+@author: André Luiz Bittencourt - 14/0130225
 
 """
 
